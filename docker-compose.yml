@@ -1,5 +1,5 @@
 db:
-  image: arangodb/arangodb:2.7.2
+  image: arangodb/arangodb:2.8.2
   environment:
     - ARANGO_NO_AUTH=true
   ports:
