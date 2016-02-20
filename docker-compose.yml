@@ -1,0 +1,18 @@
+db:
+  image: arangodb/arangodb:2.7.2
+  environment:
+    - ARANGO_NO_AUTH=true
+  ports:
+    - 8529:8529
+
+web:
+  build: .
+  volumes:
+    - .:/usr/src/app
+    - ./docker-state/.m2:/root/.m2
+  links:
+    - db
+  ports:
+    - 3000:3000
+  stdin_open: true
+  tty: true
