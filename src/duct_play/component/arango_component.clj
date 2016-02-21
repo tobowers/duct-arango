@@ -31,12 +31,10 @@
 
   DatabaseActions
   (create-database [component database-name]
-    (let [driver (:driver component)]
-      (.createDatabase driver database-name nil)))
+    (.createDatabase (:driver component) database-name nil))
 
   (delete-database [component database-name]
-    (let [driver (:driver component)]
-      (.deleteDatabase driver database-name))))
+    (.deleteDatabase (:driver component) database-name)))
 
 (defn arango-component [host port]
   (map->ArangoComponent {:host host, :port port}))
