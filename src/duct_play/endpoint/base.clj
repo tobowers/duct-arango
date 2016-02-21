@@ -2,7 +2,7 @@
   (:use ring.util.response)
   (:require [compojure.core :refer :all]))
 
-(defn base-endpoint [config]
+(defn base-endpoint [_config]
   (context "/" []
     (GET "/" []
     (redirect "/example"))))
